@@ -60,12 +60,11 @@ struct ContentView: View {
                         .transition(.move(edge: .trailing).combined(with: .opacity))
                     }
 
-                    // Navigation dots
-                    NavigationDotsView(
-                        currentIndex: currentIndex,
-                        total: primeMinsters.count
+                    // Bottom Timeline
+                    BottomTimelineView(
+                        currentIndex: $currentIndex,
+                        primeMinsters: primeMinsters
                     )
-                    .padding(.bottom, 20)
                 }
             }
         }
@@ -134,19 +133,105 @@ struct HeaderView: View {
     }
 }
 
-struct NavigationDotsView: View {
-    let currentIndex: Int
-    let total: Int
+struct BottomTimelineView: View {
+    @Binding var currentIndex: Int
+    let primeMinsters: [PrimeMinister]
+    @State private var timelineDragOffset: CGFloat = 0
 
     var body: some View {
-        HStack(spacing: 6) {
-            ForEach(0..<total, id: \.self) { index in
-                Circle()
-                    .fill(index == currentIndex ? Color.black : Color.black.opacity(0.15))
-                    .frame(width: index == currentIndex ? 8 : 6, height: index == currentIndex ? 8 : 6)
-                    .animation(.spring(response: 0.3), value: currentIndex)
+        VStack(spacing: 0) {
+            // Timeline line
+            Rectangle()
+                .fill(Color.black.opacity(0.1))
+                .frame(height: 1)
+
+            ScrollViewReader { proxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 0) {
+                        ForEach(Array(primeMinsters.enumerated()), id: \.element.id) { index, pm in
+                            TimelineMarker(
+                                year: pm.termStart,
+                                isSelected: index == currentIndex,
+                                isFirst: index == 0,
+                                isLast: index == primeMinsters.count - 1
+                            )
+                            .id(index)
+                            .onTapGesture {
+                                withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                                    currentIndex = index
+                                }
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+                .onChange(of: currentIndex) { _, newValue in
+                    withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                        proxy.scrollTo(newValue, anchor: .center)
+                    }
+                }
+                .onAppear {
+                    proxy.scrollTo(currentIndex, anchor: .center)
+                }
             }
+            .frame(height: 70)
+            .gesture(
+                DragGesture()
+                    .onEnded { value in
+                        let threshold: CGFloat = 30
+                        withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                            if value.translation.width < -threshold && currentIndex < primeMinsters.count - 1 {
+                                currentIndex += 1
+                            } else if value.translation.width > threshold && currentIndex > 0 {
+                                currentIndex -= 1
+                            }
+                        }
+                    }
+            )
         }
+        .background(Color.white)
+    }
+}
+
+struct TimelineMarker: View {
+    let year: Int
+    let isSelected: Bool
+    let isFirst: Bool
+    let isLast: Bool
+
+    var body: some View {
+        VStack(spacing: 6) {
+            // Connecting line and marker
+            HStack(spacing: 0) {
+                // Left line
+                Rectangle()
+                    .fill(Color.black.opacity(isFirst ? 0 : 0.2))
+                    .frame(width: 20, height: 1)
+
+                // Marker dot
+                Circle()
+                    .fill(isSelected ? Color.black : Color.black.opacity(0.2))
+                    .frame(width: isSelected ? 12 : 8, height: isSelected ? 12 : 8)
+                    .overlay(
+                        Circle()
+                            .stroke(Color.black, lineWidth: isSelected ? 2 : 0)
+                            .frame(width: 18, height: 18)
+                            .opacity(isSelected ? 1 : 0)
+                    )
+
+                // Right line
+                Rectangle()
+                    .fill(Color.black.opacity(isLast ? 0 : 0.2))
+                    .frame(width: 20, height: 1)
+            }
+
+            // Year label
+            Text("\(year)")
+                .font(.system(size: isSelected ? 12 : 10, weight: isSelected ? .semibold : .regular, design: .monospaced))
+                .foregroundColor(isSelected ? .black : .gray)
+        }
+        .frame(width: 52)
+        .padding(.vertical, 8)
     }
 }
 
