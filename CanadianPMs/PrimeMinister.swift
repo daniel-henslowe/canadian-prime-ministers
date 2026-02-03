@@ -15,37 +15,6 @@ struct PrimeMinister: Identifiable, Equatable {
         String(format: "pm%02d", number)
     }
 
-    /// Vertical offset to center face in card view (negative = move image up)
-    var faceOffset: CGFloat {
-        switch number {
-        case 1: return -20    // Macdonald
-        case 2: return -30    // Mackenzie
-        case 3: return -20    // Abbott
-        case 4: return -20    // Thompson
-        case 5: return -20    // Bowell
-        case 6: return -30    // Tupper
-        case 7: return -20    // Laurier
-        case 8: return -30    // Borden
-        case 9: return -20    // Meighen
-        case 10: return -20   // King
-        case 11: return -20   // Bennett
-        case 12: return -30   // St. Laurent
-        case 13: return -30   // Diefenbaker
-        case 14: return -20   // Pearson
-        case 15: return -40   // P. Trudeau
-        case 16: return -30   // Clark
-        case 17: return -40   // Turner
-        case 18: return -30   // Mulroney
-        case 19: return -40   // Campbell
-        case 20: return -30   // Chrétien
-        case 21: return -30   // Martin
-        case 22: return -30   // Harper
-        case 23: return -30   // J. Trudeau
-        case 24: return -30   // Carney
-        default: return -20
-        }
-    }
-
     var termString: String {
         if let end = termEnd {
             return "\(termStart)–\(end)"

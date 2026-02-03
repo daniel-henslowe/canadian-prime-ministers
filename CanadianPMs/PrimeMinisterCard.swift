@@ -8,14 +8,17 @@ struct PrimeMinisterCard: View {
         VStack(spacing: 0) {
             // Image section
             ZStack(alignment: .bottomLeading) {
-                Image(primeMinister.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .grayscale(1.0)
-                    .contrast(1.1)
-                    .offset(y: primeMinister.faceOffset)
-                    .frame(height: 340)
-                    .clipped()
+                GeometryReader { geo in
+                    Image(primeMinister.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .grayscale(1.0)
+                        .contrast(1.1)
+                        .frame(width: geo.size.width, height: geo.size.height)
+                        .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
+                }
+                .frame(height: 340)
+                .clipped()
 
                 // Number overlay
                 Text(String(format: "%02d", primeMinister.number))
