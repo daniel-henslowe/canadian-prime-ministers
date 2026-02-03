@@ -116,6 +116,7 @@ struct TimelineCard: View {
             Image(primeMinister.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .grayscale(1.0)
                 .frame(width: isSelected ? 70 : 50, height: isSelected ? 70 : 50, alignment: .top)
                 .clipShape(Circle())
                 .overlay(
