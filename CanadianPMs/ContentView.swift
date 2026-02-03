@@ -226,7 +226,7 @@ struct TimelineMarker: View {
             }
 
             // Year label
-            Text("\(year)")
+            Text(String(year))
                 .font(.system(size: isSelected ? 12 : 10, weight: isSelected ? .semibold : .regular, design: .monospaced))
                 .foregroundColor(isSelected ? .black : .gray)
         }

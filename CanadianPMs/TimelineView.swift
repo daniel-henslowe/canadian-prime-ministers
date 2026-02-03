@@ -103,7 +103,7 @@ struct TimelineCard: View {
     var body: some View {
         VStack(spacing: 8) {
             // Year marker
-            Text("\(primeMinister.termStart)")
+            Text(String(primeMinister.termStart))
                 .font(.system(size: 10, weight: .medium, design: .monospaced))
                 .foregroundColor(isSelected ? .black : .gray)
 
