@@ -12,8 +12,6 @@ struct PrimeMinisterCard: View {
                     Image(primeMinister.imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .grayscale(1.0)
-                        .contrast(1.1)
                         .frame(width: geo.size.width, height: geo.size.height)
                         .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
                 }
