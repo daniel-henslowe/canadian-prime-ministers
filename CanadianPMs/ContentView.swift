@@ -18,6 +18,7 @@ struct ContentView: View {
                 VStack(spacing: 0) {
                     // Header
                     HeaderView(showTimeline: $showTimeline)
+                        .zIndex(10)
 
                     if showTimeline {
                         // Timeline View
@@ -114,9 +115,11 @@ struct HeaderView: View {
 
             Spacer()
 
-            Button(action: {
-                showTimeline.toggle()
-            }) {
+            Button {
+                withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                    showTimeline.toggle()
+                }
+            } label: {
                 Image(systemName: showTimeline ? "rectangle.stack" : "timeline.selection")
                     .font(.system(size: 20))
                     .foregroundColor(.black)
@@ -125,7 +128,9 @@ struct HeaderView: View {
                         Circle()
                             .fill(Color.black.opacity(0.05))
                     )
+                    .contentShape(Circle())
             }
+            .buttonStyle(.plain)
         }
         .padding(.horizontal, 24)
         .padding(.top, 16)
