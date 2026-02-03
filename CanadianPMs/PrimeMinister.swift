@@ -29,6 +29,8 @@ struct PrimeMinister: Identifiable, Equatable {
         }
     }
 
+    // Image URLs sourced from Wikipedia's List of Prime Ministers of Canada
+    // https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Canada
     static let allPMs: [PrimeMinister] = [
         PrimeMinister(
             number: 1,
@@ -38,7 +40,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1873,
             terms: "1867–1873, 1878–1891",
             description: "Canada's first Prime Minister and a Father of Confederation. He oversaw the construction of the Canadian Pacific Railway and the expansion of Canada westward.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/SirJohnAMacdonald.jpg/440px-SirJohnAMacdonald.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/John_A_Macdonald_%28ca._1875%29.jpg/220px-John_A_Macdonald_%28ca._1875%29.jpg"
         ),
         PrimeMinister(
             number: 2,
@@ -48,7 +50,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1878,
             terms: "1873–1878",
             description: "First Liberal PM. Introduced the secret ballot and created the Supreme Court of Canada. Known for his integrity and frugal management of public finances.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Alexander_Mackenzie_-_portrait.jpg/440px-Alexander_Mackenzie_-_portrait.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Alexander_Mackenzie_%28politician%29.jpg/220px-Alexander_Mackenzie_%28politician%29.jpg"
         ),
         PrimeMinister(
             number: 3,
@@ -58,7 +60,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1892,
             terms: "1891–1892",
             description: "First Canadian-born Prime Minister. Served briefly after Macdonald's death. Previously served as Mayor of Montreal and Dean of McGill Law Faculty.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/SirJohnAbbott.jpg/440px-SirJohnAbbott.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/SirJohnAbbott.jpg/220px-SirJohnAbbott.jpg"
         ),
         PrimeMinister(
             number: 4,
@@ -68,7 +70,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1894,
             terms: "1892–1894",
             description: "Reformed Canadian criminal law and created the Criminal Code. Died suddenly at Windsor Castle after being sworn into the British Privy Council.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/SirJohnSparrowDavidThompson.jpg/440px-SirJohnSparrowDavidThompson.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/John_Sparrow_David_Thompson.jpg/220px-John_Sparrow_David_Thompson.jpg"
         ),
         PrimeMinister(
             number: 5,
@@ -78,7 +80,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1896,
             terms: "1894–1896",
             description: "Rose from newspaper editor to Prime Minister. His government was plagued by the Manitoba Schools Question crisis.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/SirMackenzieBowell.jpg/440px-SirMackenzieBowell.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Mackenzie_Bowell.jpg/220px-Mackenzie_Bowell.jpg"
         ),
         PrimeMinister(
             number: 6,
@@ -88,7 +90,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1896,
             terms: "1896 (68 days)",
             description: "Shortest-serving PM at just 68 days. A Father of Confederation who was instrumental in bringing Nova Scotia into Canada.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/SirCharlesTupper.jpg/440px-SirCharlesTupper.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Sir_Charles_Tupper.jpg/220px-Sir_Charles_Tupper.jpg"
         ),
         PrimeMinister(
             number: 7,
@@ -98,7 +100,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1911,
             terms: "1896–1911",
             description: "First francophone PM. Oversaw massive immigration and the creation of Alberta and Saskatchewan. His image appears on the Canadian $5 bill.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/The_Honourable_Sir_Wilfrid_Laurier_Photo_C_%28HS85-10-16873%29.jpg/440px-The_Honourable_Sir_Wilfrid_Laurier_Photo_C_%28HS85-10-16873%29.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Wilfrid_Laurier_in_1906.jpg/220px-Wilfrid_Laurier_in_1906.jpg"
         ),
         PrimeMinister(
             number: 8,
@@ -108,7 +110,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1920,
             terms: "1911–1920",
             description: "Led Canada through WWI. Fought for and won Canada's right to sign the Treaty of Versailles independently. Introduced income tax as a 'temporary' measure.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Robert_Borden%2C_1914.jpg/440px-Robert_Borden%2C_1914.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Robert_Borden.jpg/220px-Robert_Borden.jpg"
         ),
         PrimeMinister(
             number: 9,
@@ -118,7 +120,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1921,
             terms: "1920–1921, 1926",
             description: "Served two brief terms. Known for his oratorical skills and role in the Winnipeg General Strike. Later served in the Senate.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Arthur_Meighen.jpg/440px-Arthur_Meighen.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Arthur_Meighen_%28retouched%29.jpg/220px-Arthur_Meighen_%28retouched%29.jpg"
         ),
         PrimeMinister(
             number: 10,
@@ -128,7 +130,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1948,
             terms: "1921–1926, 1926–1930, 1935–1948",
             description: "Canada's longest-serving PM (21+ years). Led Canada through WWII and expanded social programs. Known for his eccentric spiritualism.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/William_Lyon_Mackenzie_King_1942.jpg/440px-William_Lyon_Mackenzie_King_1942.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/William_Lyon_Mackenzie_King_1947.jpg/220px-William_Lyon_Mackenzie_King_1947.jpg"
         ),
         PrimeMinister(
             number: 11,
@@ -138,7 +140,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1935,
             terms: "1930–1935",
             description: "Led during the Great Depression. Created the Bank of Canada and Canadian Broadcasting Corporation. Later became a British Viscount.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Richard_Bedford_Bennett.jpg/440px-Richard_Bedford_Bennett.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/R._B._Bennett.jpg/220px-R._B._Bennett.jpg"
         ),
         PrimeMinister(
             number: 12,
@@ -148,7 +150,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1957,
             terms: "1948–1957",
             description: "Known as 'Uncle Louis.' Oversaw Newfoundland joining Confederation and Canada's role in creating NATO. Built the Trans-Canada Highway.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Louis_St._Laurent.jpg/440px-Louis_St._Laurent.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Louis_St._Laurent.jpg/220px-Louis_St._Laurent.jpg"
         ),
         PrimeMinister(
             number: 13,
@@ -158,7 +160,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1963,
             terms: "1957–1963",
             description: "Champion of human rights who created the Canadian Bill of Rights. Extended voting rights to Indigenous peoples and expanded northern development.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/John_Diefenbaker_1957_%28cropped%29.jpg/440px-John_Diefenbaker_1957_%28cropped%29.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/John_G._Diefenbaker.jpg/220px-John_G._Diefenbaker.jpg"
         ),
         PrimeMinister(
             number: 14,
@@ -168,7 +170,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1968,
             terms: "1963–1968",
             description: "Nobel Peace Prize winner for resolving the Suez Crisis. Introduced universal healthcare, the Canada Pension Plan, and the maple leaf flag.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Lester_B._Pearson_with_microphone.jpg/440px-Lester_B._Pearson_with_microphone.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Lester_B._Pearson.jpg/220px-Lester_B._Pearson.jpg"
         ),
         PrimeMinister(
             number: 15,
@@ -178,7 +180,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1984,
             terms: "1968–1979, 1980–1984",
             description: "Charismatic leader who patriated the Constitution and created the Charter of Rights and Freedoms. Implemented official bilingualism.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Pierre_Trudeau_%281975%29.jpg/440px-Pierre_Trudeau_%281975%29.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Pierre_Trudeau_%281975%29.jpg/220px-Pierre_Trudeau_%281975%29.jpg"
         ),
         PrimeMinister(
             number: 16,
@@ -188,7 +190,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1980,
             terms: "1979–1980",
             description: "Youngest PM at 39. His minority government fell after just 9 months. Later served as External Affairs Minister and PC Party leader.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Joe_Clark_at_the_2010_Canada_Day_celebrations_in_Ottawa_%28cropped%29.jpg/440px-Joe_Clark_at_the_2010_Canada_Day_celebrations_in_Ottawa_%28cropped%29.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Joe_Clark_1980_%28cropped%29.jpg/220px-Joe_Clark_1980_%28cropped%29.jpg"
         ),
         PrimeMinister(
             number: 17,
@@ -198,7 +200,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1984,
             terms: "1984 (79 days)",
             description: "Second shortest-serving PM. Served 79 days before calling an election that resulted in a historic defeat. Former Olympic sprinter.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/The_Honourable_John_Turner%2C_PC%2C_CC%2C_QC.jpg/440px-The_Honourable_John_Turner%2C_PC%2C_CC%2C_QC.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Turner_1984.jpg/220px-John_Turner_1984.jpg"
         ),
         PrimeMinister(
             number: 18,
@@ -208,7 +210,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1993,
             terms: "1984–1993",
             description: "Negotiated free trade agreements with the US and Mexico (NAFTA). Fought against South African apartheid. Won two majority governments.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Brian_Mulroney_detail.jpg/440px-Brian_Mulroney_detail.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Brian_Mulroney_1984_%28cropped%29.jpg/220px-Brian_Mulroney_1984_%28cropped%29.jpg"
         ),
         PrimeMinister(
             number: 19,
@@ -218,7 +220,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 1993,
             terms: "1993 (132 days)",
             description: "Canada's first and only female Prime Minister. Served 132 days. Her party was reduced to 2 seats in the subsequent election.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Kim_Campbell_in_2015_%28cropped%29.jpg/440px-Kim_Campbell_in_2015_%28cropped%29.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Kim_Campbell_1993.jpg/220px-Kim_Campbell_1993.jpg"
         ),
         PrimeMinister(
             number: 20,
@@ -228,7 +230,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 2003,
             terms: "1993–2003",
             description: "Won three consecutive majority governments. Known for eliminating the federal deficit. Kept Canada out of the Iraq War.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Jean_Chr%C3%A9tien_2010.jpg/440px-Jean_Chr%C3%A9tien_2010.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Jean_Chr%C3%A9tien_2003.jpg/220px-Jean_Chr%C3%A9tien_2003.jpg"
         ),
         PrimeMinister(
             number: 21,
@@ -238,7 +240,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 2006,
             terms: "2003–2006",
             description: "As Finance Minister, eliminated the deficit. As PM, created the Kelowna Accord for Indigenous peoples and legalized same-sex marriage.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Paul_Martin_2011.jpg/440px-Paul_Martin_2011.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Paul_Martin_2004.jpg/220px-Paul_Martin_2004.jpg"
         ),
         PrimeMinister(
             number: 22,
@@ -248,7 +250,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 2015,
             terms: "2006–2015",
             description: "Economist who led Canada through the 2008 financial crisis. Issued a formal apology for residential schools. Won three elections.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Stephen_Harper_by_Remy_Steinegger.jpg/440px-Stephen_Harper_by_Remy_Steinegger.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Stephen_Harper_2014.jpg/220px-Stephen_Harper_2014.jpg"
         ),
         PrimeMinister(
             number: 23,
@@ -258,7 +260,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: 2025,
             terms: "2015–2025",
             description: "Son of Pierre Trudeau. Legalized cannabis, implemented carbon pricing, and led pandemic response. First PM born after 1950.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Justin_Trudeau_in_Lima%2C_Peru_-_2024_%28cropped%29.jpg/440px-Justin_Trudeau_in_Lima%2C_Peru_-_2024_%28cropped%29.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Justin_Trudeau_in_Lima%2C_Peru_-_2024_%28cropped%29.jpg/220px-Justin_Trudeau_in_Lima%2C_Peru_-_2024_%28cropped%29.jpg"
         ),
         PrimeMinister(
             number: 24,
@@ -268,7 +270,7 @@ struct PrimeMinister: Identifiable, Equatable {
             termEnd: nil,
             terms: "2025–Present",
             description: "Former Governor of the Bank of Canada and Bank of England. First former central banker to become PM. Focused on economic policy.",
-            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Mark_Carney_at_Annual_Meetings_2017.jpg/440px-Mark_Carney_at_Annual_Meetings_2017.jpg"
+            imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Mark_Carney%2C_Governor_of_the_Bank_of_England%2C_in_London_2019.jpg/220px-Mark_Carney%2C_Governor_of_the_Bank_of_England%2C_in_London_2019.jpg"
         )
     ]
 }
