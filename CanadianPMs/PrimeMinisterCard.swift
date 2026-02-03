@@ -13,6 +13,7 @@ struct PrimeMinisterCard: View {
                     .aspectRatio(contentMode: .fill)
                     .grayscale(1.0)
                     .contrast(1.1)
+                    .offset(y: primeMinister.faceOffset)
                     .frame(height: 340)
                     .clipped()
 
