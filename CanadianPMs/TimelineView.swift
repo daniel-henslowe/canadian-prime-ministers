@@ -74,23 +74,6 @@ struct HistoryTimelineView: View {
             }
 
             Spacer()
-
-            // Swipe hint
-            HStack {
-                Spacer()
-                HStack(spacing: 8) {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 12, weight: .light))
-                    Text("SWIPE")
-                        .font(.system(size: 9, weight: .medium, design: .monospaced))
-                        .tracking(2)
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 12, weight: .light))
-                }
-                .foregroundColor(.gray.opacity(0.5))
-                Spacer()
-            }
-            .padding(.bottom, 8)
         }
         .animation(.spring(response: 0.4, dampingFraction: 0.8), value: currentIndex)
     }
@@ -137,6 +120,7 @@ struct TimelineCard: View {
 
 struct TimelineDetailView: View {
     let primeMinister: PrimeMinister
+    @State private var showDetail = false
 
     var body: some View {
         VStack(spacing: 16) {
@@ -172,6 +156,27 @@ struct TimelineDetailView: View {
                 .lineSpacing(4)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 32)
+
+            // More button
+            Button {
+                showDetail = true
+            } label: {
+                HStack(spacing: 6) {
+                    Text("MORE")
+                        .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                        .tracking(1.5)
+                    Image(systemName: "arrow.right")
+                        .font(.system(size: 10, weight: .semibold))
+                }
+                .foregroundColor(.black)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .background(
+                    Capsule()
+                        .stroke(Color.black.opacity(0.2), lineWidth: 1)
+                )
+            }
+            .buttonStyle(.plain)
         }
         .padding(.vertical, 24)
         .padding(.horizontal, 20)
@@ -180,6 +185,9 @@ struct TimelineDetailView: View {
                 .fill(Color.black.opacity(0.02))
         )
         .padding(.horizontal, 20)
+        .fullScreenCover(isPresented: $showDetail) {
+            PrimeMinisterDetailView(primeMinister: primeMinister)
+        }
     }
 }
 

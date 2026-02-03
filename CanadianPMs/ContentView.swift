@@ -10,11 +10,12 @@ struct ContentView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
+            ZStack(alignment: .bottom) {
                 // Background
                 Color.white
                     .ignoresSafeArea()
 
+                // Main content area
                 VStack(spacing: 0) {
                     // Header
                     HeaderView(showTimeline: $showTimeline)
@@ -29,6 +30,9 @@ struct ContentView: View {
                         .transition(.move(edge: .leading).combined(with: .opacity))
                     } else {
                         // Main Card View with vertical swipe
+                        Spacer()
+                            .frame(height: 20)
+
                         ZStack {
                             ForEach(Array(primeMinsters.enumerated()), id: \.element.id) { index, pm in
                                 PrimeMinisterCard(
@@ -41,6 +45,7 @@ struct ContentView: View {
                                 .zIndex(index == currentIndex ? 1 : 0)
                             }
                         }
+                        .frame(maxHeight: geometry.size.height - 150)
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
@@ -60,12 +65,17 @@ struct ContentView: View {
                         )
                         .transition(.move(edge: .trailing).combined(with: .opacity))
                     }
+                }
+                .padding(.bottom, 70)
 
-                    // Bottom Timeline
+                // Fixed bottom timeline - always at same position
+                VStack(spacing: 0) {
+                    Spacer()
                     BottomTimelineView(
                         currentIndex: $currentIndex,
                         primeMinsters: primeMinsters
                     )
+                    .background(Color.white)
                 }
             }
         }
