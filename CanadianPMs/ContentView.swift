@@ -102,13 +102,15 @@ struct HeaderView: View {
 
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 2) {
-                Text("PRIME MINISTERS")
-                    .font(.system(size: 11, weight: .medium))
-                    .tracking(3)
-                    .foregroundColor(.black.opacity(0.4))
+            HStack(spacing: 0) {
+                Text("Prime Ministers")
+                    .font(.system(size: 17, weight: .regular, design: .serif))
+                    .foregroundColor(.black)
+                Text(" of ")
+                    .font(.system(size: 17, weight: .light, design: .serif))
+                    .foregroundColor(.gray)
                 Text("Canada")
-                    .font(.system(size: 32, weight: .light, design: .serif))
+                    .font(.system(size: 17, weight: .semibold, design: .serif))
                     .foregroundColor(.black)
             }
 
