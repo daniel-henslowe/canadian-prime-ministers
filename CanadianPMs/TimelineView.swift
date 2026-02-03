@@ -113,34 +113,17 @@ struct TimelineCard: View {
                 .frame(width: 1, height: 20)
 
             // Photo
-            AsyncImage(url: URL(string: primeMinister.imageURL)) { phase in
-                switch phase {
-                case .empty:
+            Image(primeMinister.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .grayscale(1.0)
+                .frame(width: isSelected ? 70 : 50, height: isSelected ? 70 : 50)
+                .clipShape(Circle())
+                .overlay(
                     Circle()
-                        .fill(Color.gray.opacity(0.1))
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .grayscale(1.0)
-                case .failure:
-                    Circle()
-                        .fill(Color.gray.opacity(0.1))
-                        .overlay(
-                            Image(systemName: "person.fill")
-                                .foregroundColor(.gray.opacity(0.3))
-                        )
-                @unknown default:
-                    EmptyView()
-                }
-            }
-            .frame(width: isSelected ? 70 : 50, height: isSelected ? 70 : 50)
-            .clipShape(Circle())
-            .overlay(
-                Circle()
-                    .stroke(isSelected ? Color.black : Color.gray.opacity(0.2), lineWidth: isSelected ? 3 : 1)
-            )
-            .shadow(color: isSelected ? .black.opacity(0.15) : .clear, radius: 10, x: 0, y: 5)
+                        .stroke(isSelected ? Color.black : Color.gray.opacity(0.2), lineWidth: isSelected ? 3 : 1)
+                )
+                .shadow(color: isSelected ? .black.opacity(0.15) : .clear, radius: 10, x: 0, y: 5)
 
             // Number
             Text(String(format: "%02d", primeMinister.number))

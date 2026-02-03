@@ -8,35 +8,13 @@ struct PrimeMinisterCard: View {
         VStack(spacing: 0) {
             // Image section
             ZStack(alignment: .bottomLeading) {
-                AsyncImage(url: URL(string: primeMinister.imageURL)) { phase in
-                    switch phase {
-                    case .empty:
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.1))
-                            .overlay(
-                                ProgressView()
-                                    .tint(.gray)
-                            )
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .grayscale(1.0)
-                            .contrast(1.1)
-                    case .failure:
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.1))
-                            .overlay(
-                                Image(systemName: "person.fill")
-                                    .font(.system(size: 60))
-                                    .foregroundColor(.gray.opacity(0.3))
-                            )
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
-                .frame(height: 340)
-                .clipped()
+                Image(primeMinister.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .grayscale(1.0)
+                    .contrast(1.1)
+                    .frame(height: 340)
+                    .clipped()
 
                 // Number overlay
                 Text(String(format: "%02d", primeMinister.number))

@@ -83,7 +83,7 @@ Each Prime Minister entry includes:
 ### Architecture
 - **Pure SwiftUI** - No UIKit dependencies
 - **MVVM-lite** - Simple state management with `@State` and `@Binding`
-- **Async image loading** - Native `AsyncImage` for Wikipedia portraits
+- **Local image assets** - All 24 PM portraits bundled in app (works offline)
 
 ### Project Structure
 ```
